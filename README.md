@@ -2,7 +2,7 @@
 
 A powerful AI-powered document agent built with Claude (Anthropic API) that provides intelligent document editing, web research, file management, and task automation capabilities. Designed for developers, researchers, and content creators who need an intelligent assistant for complex document workflows.
 
-## 🎯 Overview
+## Overview
 
 This project demonstrates advanced AI agent capabilities using Claude's latest models, featuring:
 - **Agentic Tool Use**: Sophisticated multi-step reasoning with 20+ specialized tools
@@ -11,15 +11,15 @@ This project demonstrates advanced AI agent capabilities using Claude's latest m
 - **Task Orchestration**: Automatic todo management for complex workflows
 - **Extensible Architecture**: Easy to add custom tools and behaviors
 
-## ✨ Key Features
+## Key Features
 
 ### Core Capabilities
-- **🔍 Web Research**: Powered by Anthropic's web search tool for current information
-- **📝 Document Editing**: Create, edit, and refactor markdown/text files with precision
-- **💻 Code Operations**: File search, grep, multi-file editing, git operations
-- **🖼️ Image Analysis**: Screenshot capture and image understanding
-- **📊 Data Processing**: Text transformation, calculations, JSON/CSV handling
-- **✅ Task Management**: Automatic todo list generation and tracking
+- **Web Research**: Powered by Anthropic's web search tool for current information
+- **Document Editing**: Create, edit, and refactor markdown/text files with precision
+- **Code Operations**: File search, grep, multi-file editing, git operations
+- **Image Analysis**: Screenshot capture and image understanding
+- **Data Processing**: Text transformation, calculations, JSON/CSV handling
+- **Task Management**: Automatic todo list generation and tracking
 
 ### Advanced Features
 - **Multi-step Research**: Comprehensive research workflows with source tracking
@@ -97,7 +97,7 @@ Once running, you can:
 - `"Research best practices for email marketing"` - Web research
 - `"Help me write a professional email"` - Writing assistance
 
-## 🏗️ Architecture
+## Architecture
 
 ### Project Structure
 ```
@@ -188,7 +188,7 @@ For detailed tracing with Logfire:
 2. Get your token
 3. Set `LOGFIRE_TOKEN` in your .env file
 
-## 🚀 Use Cases
+## Use Cases
 
 ### For Developers
 - **Code Documentation**: Generate and maintain technical documentation
@@ -208,14 +208,14 @@ For detailed tracing with Logfire:
 - **Email Drafting**: Professional email composition with context
 - **Content Editing**: Grammar, style, and structure improvements
 
-## 📊 Examples
+## Examples
 
 See the `examples/` directory for:
 - `example_research_agent.py`: Demonstration of research capabilities
 - `eval_*.py`: Evaluation scripts for testing agent performance
 - `test_*.py`: Various test scenarios and use cases
 
-## 🧪 Testing
+## Testing
 
 Run the test suite:
 ```bash
@@ -230,7 +230,7 @@ pytest tests/test_agent_integration.py
 pytest tests/test_message_handling.py
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### "API key not found" error
 - Ensure your `.env` file exists in the project root
@@ -253,7 +253,7 @@ pytest tests/test_message_handling.py
 - Limit conversation history for long sessions
 - Use specific tools directly rather than general queries
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Areas for improvement:
 - Additional tool implementations
@@ -262,18 +262,18 @@ Contributions are welcome! Areas for improvement:
 - Documentation improvements
 - Test coverage expansion
 
-## 📝 License
+## License
 
 MIT License - see LICENSE file for details.
 
 Built on the Anthropic API and inspired by Claude Code best practices.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Anthropic for the Claude API and tool use capabilities
 - Anthropic Quickstarts for the foundation framework
 - The open-source community for inspiration and tools
 
-## 📧 Contact
+## Contact
 
 For questions, issues, or suggestions, please open an issue on GitHub.

@@ -2,7 +2,7 @@
 
 This guide helps you quickly evaluate and run this AI document agent.
 
-## 🚀 2-Minute Setup
+## 2-Minute Setup
 
 ```bash
 # 1. Clone and enter directory
@@ -23,7 +23,7 @@ uv run python document_agent.py
 python document_agent.py
 ```
 
-## 💡 Quick Demo Tasks
+## Quick Demo Tasks
 
 Try these commands to see the agent in action:
 
@@ -52,7 +52,7 @@ Try these commands to see the agent in action:
 "Help me add a new tool to this project. First analyze the existing tool structure, then guide me through creating a new one."
 ```
 
-## 📁 Key Files to Review
+## Key Files to Review
 
 ### Core Implementation
 - **`agent.py`** (800+ lines): Main agent loop, tool orchestration, message handling
@@ -71,7 +71,7 @@ Try these commands to see the agent in action:
 - **`examples/example_research_agent.py`**: Research demo
 - **`evals/`**: Performance evaluation results
 
-## 🎯 Architecture Highlights
+## Architecture Highlights
 
 ### 1. Tool Pattern
 ```python
@@ -96,7 +96,7 @@ User Input → Claude API → Tool Calls → Execute Tools → Results → Claud
 - **Context Management**: Smart token optimization
 - **Safety**: Sandboxed execution for bash/git operations
 
-## 🧪 Running Tests
+## Running Tests
 
 ```bash
 # All tests
@@ -109,7 +109,7 @@ pytest tests/test_basic_tools.py -v
 pytest tests/ --cov=. --cov-report=html
 ```
 
-## 🔍 Evaluation
+## Evaluation
 
 The `evals/` directory contains:
 - Document editing performance metrics
@@ -117,7 +117,7 @@ The `evals/` directory contains:
 - Tool usage patterns
 - Error recovery analysis
 
-## 💬 Discussion Points
+## Discussion Points
 
 ### Technical
 - How would you scale this to handle 1000s of concurrent users?
@@ -137,7 +137,7 @@ The `evals/` directory contains:
 - Monitoring and observability strategy
 - Multi-tenant architecture
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### API Key Issues
 ```bash
@@ -161,20 +161,20 @@ uv sync
 - Web search requires internet connection
 - Image tools may be platform-specific
 
-## 📊 Performance Characteristics
+## Performance Characteristics
 
 - **Latency**: ~2-5s for simple queries, 10-30s for research tasks
 - **Token Usage**: 500-2000 tokens per interaction
 - **Tool Calls**: Average 2-4 per complex task
 - **Accuracy**: 90%+ for well-defined tasks
 
-## 🔗 Related Resources
+## Related Resources
 
 - [Anthropic Claude API Docs](https://docs.anthropic.com/)
 - [Tool Use Guide](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
 - [Claude Code Best Practices](https://docs.anthropic.com/en/docs/build-with-claude/claude-code)
 
-## 📝 Code Statistics
+## Code Statistics
 
 - **Total Lines**: ~11,000
 - **Tools Implemented**: 20+
