@@ -100,64 +100,61 @@ Once running, you can:
 ### Project Structure
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e0e0','primaryTextColor':'#000','primaryBorderColor':'#666','lineColor':'#666','secondaryColor':'#f5f5f5','tertiaryColor':'#d0d0d0','fontSize':'14px','fontFamily':'arial'}}}%%
-graph TB
-    subgraph Core["Core Components"]
-        style Core fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#000
-        Agent["agent.py<br/><small>Tool orchestration & agentic loops</small>"]
-        CLI["document_agent.py<br/><small>Main CLI entry point</small>"]
-        style Agent fill:#e0e0e0,stroke:#666,stroke-width:2px,color:#000
-        style CLI fill:#e0e0e0,stroke:#666,stroke-width:2px,color:#000
-    end
-    
-    subgraph Tools["Tool Implementations"]
-        style Tools fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#000
-        FileTools["file_tools.py<br/><small>Read/write/search</small>"]
-        SystemTools["system_tools.py<br/><small>Grep, ls, find, todo</small>"]
-        WebTools["anthropic_web_tool.py<br/><small>Web search</small>"]
-        ResearchTools["research_tools.py<br/><small>Advanced research</small>"]
-        BashTools["bash_enhanced.py<br/><small>Safe execution</small>"]
-        GitTools["git_tool.py<br/><small>Git operations</small>"]
-        MultiEdit["multi_edit.py<br/><small>Batch editing</small>"]
-        ImageTools["image_tool.py<br/><small>Image analysis</small>"]
-        NotebookTools["notebook_tool.py<br/><small>Jupyter support</small>"]
-        style FileTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style SystemTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style WebTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style ResearchTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style BashTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style GitTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style MultiEdit fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style ImageTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-        style NotebookTools fill:#d0d0d0,stroke:#666,stroke-width:1px,color:#000
-    end
-    
-    subgraph Utils["Utilities & Support"]
-        style Utils fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#000
-        History["history_util.py<br/><small>Conversation history</small>"]
-        ToolUtil["tool_util.py<br/><small>Tool helpers</small>"]
-        Tests["tests/<br/><small>Integration tests</small>"]
-        Examples["examples/<br/><small>Example scripts</small>"]
-        Evals["evals/<br/><small>Evaluation results</small>"]
-        style History fill:#e0e0e0,stroke:#666,stroke-width:1px,color:#000
-        style ToolUtil fill:#e0e0e0,stroke:#666,stroke-width:1px,color:#000
-        style Tests fill:#c0c0c0,stroke:#666,stroke-width:1px,color:#000
-        style Examples fill:#c0c0c0,stroke:#666,stroke-width:1px,color:#000
-        style Evals fill:#c0c0c0,stroke:#666,stroke-width:1px,color:#000
-    end
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e0e0','primaryTextColor':'#000','primaryBorderColor':'#666','lineColor':'#666','secondaryColor':'#f5f5f5','tertiaryColor':'#d0d0d0','fontSize':'13px','fontFamily':'arial'}}}%%
+graph TD
+    CLI["document_agent.py<br/><small>Main CLI Entry Point</small>"]
+    Agent["agent.py<br/><small>Core Agent & Tool Orchestration</small>"]
     
     CLI --> Agent
-    Agent --> FileTools
-    Agent --> SystemTools
-    Agent --> WebTools
-    Agent --> ResearchTools
-    Agent --> BashTools
-    Agent --> GitTools
-    Agent --> MultiEdit
-    Agent --> ImageTools
-    Agent --> NotebookTools
-    Agent --> History
-    Agent --> ToolUtil
+    
+    Agent --> FileOps["File Operations"]
+    Agent --> Research["Research & Web"]
+    Agent --> DevTools["Development Tools"]
+    Agent --> Intelligence["Intelligence & Planning"]
+    Agent --> Utils["Utilities"]
+    
+    FileOps --> FileTools["file_tools.py<br/><small>Read/write/search</small>"]
+    FileOps --> SystemTools["system_tools.py<br/><small>Grep, ls, find</small>"]
+    FileOps --> MultiEdit["multi_edit.py<br/><small>Batch editing</small>"]
+    
+    Research --> WebTools["anthropic_web_tool.py<br/><small>Web search</small>"]
+    Research --> ResearchTools["research_tools.py<br/><small>Advanced research</small>"]
+    
+    DevTools --> BashTools["bash_enhanced.py<br/><small>Safe execution</small>"]
+    DevTools --> GitTools["git_tool.py<br/><small>Git operations</small>"]
+    DevTools --> NotebookTools["notebook_tool.py<br/><small>Jupyter support</small>"]
+    DevTools --> ImageTools["image_tool.py<br/><small>Image analysis</small>"]
+    
+    Intelligence --> TodoTools["Todo Management<br/><small>Task tracking</small>"]
+    Intelligence --> ThinkTools["Extended Reasoning<br/><small>Deep analysis</small>"]
+    
+    Utils --> History["history_util.py<br/><small>Conversation history</small>"]
+    Utils --> ToolUtil["tool_util.py<br/><small>Tool helpers</small>"]
+    Utils --> Tests["tests/<br/><small>Integration tests</small>"]
+    
+    style CLI fill:#e0e0e0,stroke:#333,stroke-width:2px,color:#000
+    style Agent fill:#d0d0d0,stroke:#333,stroke-width:2px,color:#000
+    
+    style FileOps fill:#f5f5f5,stroke:#666,stroke-width:2px,color:#000
+    style Research fill:#f5f5f5,stroke:#666,stroke-width:2px,color:#000
+    style DevTools fill:#f5f5f5,stroke:#666,stroke-width:2px,color:#000
+    style Intelligence fill:#f5f5f5,stroke:#666,stroke-width:2px,color:#000
+    style Utils fill:#f5f5f5,stroke:#666,stroke-width:2px,color:#000
+    
+    style FileTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style SystemTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style MultiEdit fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style WebTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style ResearchTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style BashTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style GitTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style NotebookTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style ImageTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style TodoTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style ThinkTools fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style History fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style ToolUtil fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+    style Tests fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
 ```
 
 ### Tool Categories
