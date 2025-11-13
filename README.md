@@ -459,15 +459,3 @@ Contributions are welcome! Areas for improvement:
 ## License
 
 MIT License - see LICENSE file for details.
-
-Built on the Anthropic API and inspired by Claude Code best practices.
-
-## Acknowledgments
-
-- Anthropic for the Claude API and tool use capabilities
-- Anthropic Quickstarts for the foundation framework
-- The open-source community for inspiration and tools
-
-## Contact
-
-For questions, issues, or suggestions, please open an issue on GitHub.
